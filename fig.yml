@@ -10,7 +10,9 @@ kafka:
     - zookeeper:zk
   environment:
     KAFKA_ADVERTISED_HOST_NAME: {ip}
+  volumes_from:
+    -DATA1
   volumes:
-    -/v/01/kafka/logs:/v/01/kafka/logs
-    -/v/02/kafka/logs:/v/02/kafka/logs
+    #-/v/01/kafka/logs:/v/01/kafka/logs
+    #-/v/02/kafka/logs:/v/02/kafka/logs
     - /var/run/docker.sock:/var/run/docker.sock
